@@ -13,17 +13,16 @@ def checklogs():
         file.seek(-2, os.SEEK_CUR) 
     last_line=file.readline().decode()
     last_json = json.loads(last_line)
-    datenow = dt.now()
 
+    datenow = dt.now()
     date_str = last_json["datetime"]
     format = "%Y-%m-%d %H:%M:%S"
-
     hour1 = timedelta(hours=1)
     datetime_obj = dt.strptime(date_str,format)
     difference = datenow - datetime_obj
 
     if difference < hour1:
-      if last_json["resultcode"] == 204:
+      if last_json["resultcode"] == '204':
         result = "topo_updater 1"
       else:
         result = "topo_updater 0"
