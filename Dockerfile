@@ -5,4 +5,4 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 RUN echo "kubectl exec relay-0 -c cardano-mainnet-relay -- cardano-cli" >> /usr/bin/cardano-cli && chmod +x /usr/bin/cardano-cli
 RUN crontab -l | { cat; echo "0 * * * * bash /data/script/topologyUpdater.sh"; } | crontab -
 COPY scripts /scripts
-CMD ["/scripts/start.sh"]
+CMD ["bash", "/scripts/start.sh"]
