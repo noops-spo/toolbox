@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 from urllib.parse import parse_qs
 
 def checklogs():
-  with open("/var/cardano/scrips/log/topologyUpdater_lastresult.json", "rb") as file:
+  with open("/opt/cardano/logs/topologyUpdateResult", "rb") as file:
     file.seek(-2, os.SEEK_END)
     while file.read(1) != b'\n':
         file.seek(-2, os.SEEK_CUR) 
