@@ -10,7 +10,7 @@ curl -s -o env https://raw.githubusercontent.com/cardano-community/guild-operato
 chmod 750 topologyUpdater.sh
 
 # Add the cron job
-RUN crontab -l | { cat; echo "* * * * * cd /home/cardano && bash topologyUpdater.sh > /opt/cardano/logs/topologyUpdateResult"; } | crontab -
+RUN crontab -l | { cat; echo "* * * * * cd /home/cardano && bash topologyUpdater.sh"; } | crontab -
 
 #Cron
 RUN chmod 0644 topologyUpdater.sh
