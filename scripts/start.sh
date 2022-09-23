@@ -1,2 +1,2 @@
-nohup python3 /scripts/monitor-topoupdater.py
+nohup python3 /scripts/monitor-topoupdater.py &
 cron -f
