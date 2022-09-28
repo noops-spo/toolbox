@@ -1,5 +1,5 @@
 FROM debian:stable-slim
-RUN apt-get update && apt-get install -y procps grep jq curl iproute2 lsof python3 bc
+RUN apt-get update && apt-get install -y procps grep jq curl iproute2 lsof python3 bc tcptraceroute
 RUN touch /bin/cardano-cli /bin/cardano-node && chmod +x /bin/cardano-cli /bin/cardano-node
 RUN mkdir /home/cardano
 WORKDIR /home/cardano
